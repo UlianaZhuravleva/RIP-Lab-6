@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block visibletitle %}Музыкальные группы{% endblock %}
+
+{% block body %}
+    <table border="1" align="center" width="500">
+        <tr><th align="middle">Название</th><th>Дата основания</th><th>Музыкальные предпочтения
+        {% for el in group %}
+            <tr><td>{{ el.group_name }}</td><td>{{ el.base_date }}</td><td>{{ el.genre }}
+        {% empty %}
+            <tr><td colspan="3" align="center">Нет групп</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}
